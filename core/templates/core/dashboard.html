@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="mb-4">Dashboard</h3>
+
+<div class="row">
+    {% for module in modules %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ module.name }}</h5>
+                    <a href="{{ module.url_path }}" class="btn btn-primary">
+                        Open {{ module.name }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

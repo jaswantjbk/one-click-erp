@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One-Click ERP</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- TOP NAVBAR -->
+<nav class="navbar navbar-dark bg-dark px-3">
+    <span class="navbar-brand mb-0 h1">One-Click ERP</span>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- SIDEBAR -->
+        <div class="col-md-2 bg-light min-vh-100 p-3">
+            <h6 class="text-muted">Modules</h6>
+            <ul class="nav flex-column">
+                {% for module in modules %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ module.url_path }}">
+                            {{ module.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="col-md-10 p-4">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
