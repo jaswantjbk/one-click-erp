@@ -1,15 +1,9 @@
-# Virtual environment
 venv/
-
-# Python cache
+db.sqlite3
+.env
 __pycache__/
 *.pyc
-
-# Database
-db.sqlite3
-
-# Environment variables
-.env
-
-# OS files
 .DS_Store
+Thumbs.db
+.vscode/
+
